@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "blog"
+version = "0.1.0"
+description = "Blog com Flask"
+authors = ["victor <victorcouto25@hotmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.0.1"
+python-dotenv = "^0.19.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+flake8 = "^3.9.2"
+autopep8 = "^1.5.7"
+pylint = "^2.10.2"
+isort = "^5.9.3"
+radon = "^5.1.0"
+
+[tool.autopep8]
+ignore = ["E402"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
