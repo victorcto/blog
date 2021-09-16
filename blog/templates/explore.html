@@ -7,11 +7,13 @@ block extras %}
   media="screen,projection"
 />
 {% endblock extras %} {% block content %}
+
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
-    <h3 class="" style="margin-left: 10px">Recent Posts</h3>
+    <h3 class="" style="margin-left: 10px">All posts</h3>
 
-    <div class="row">{{ posts_item.posts([1, 2, 3]) }}</div>
+    <div class="row">{{ posts_item.posts([1, 2, 3, 4, 5, 6, 7, 8, 9]) }}</div>
   </div>
 </div>
-{% endblock content %}
+
+{% endblock %}

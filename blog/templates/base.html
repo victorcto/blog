@@ -1,15 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../static/css/materialize.min.css"
+      media="screen,projection"
+    />
+    {% block extras %} {% endblock extras %}
+    <title>{{ title }}</title>
+    {% endblock head %}
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-</head>
+  <body>
+    {% block nav %}
+    <nav class="black" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo center">{{ title }}</a>
+        <ul class="left hide-on-med-and-down">
+          <li><a class="over" href="{{ url_for("web.about") }}">About</a></li>
+          <li><a class="over" href="{{ url_for("web.explore") }}">Explore</a></li>
+          <li><a class="over" href="{{ url_for("web.contact") }}">Contact</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+          <li class="login-btn">
+            <a class="waves-effect waves-light blue-grey darken-4 btn-small"
+              ><i class="material-icons left">login</i>Sign in</a
+            >
+          </li>
+          <li>
+            <a class="waves-effect waves-light blue-grey darken-4 btn-small"
+              ><i class="material-icons left">how_to_reg</i>Sign up</a
+            >
+          </li>
+        </ul>
 
-<body>
-  {% block content %}{% endblock %}
-</body>
+        <ul id="nav-mobile" class="sidenav black">
+          <li class="over">
+            <a class="white-text" href="{{ url_for("web.about") }}">About</a>
+          </li>
+          <li class="over">
+            <a class="white-text" href="{{ url_for("web.explore") }}">Explore</a>
+          </li>
+          <li class="over">
+            <a class="white-text" href="{{ url_for("web.contact") }}">Contact</a>
+          </li>
+          <li>
+            <a class="waves-effect waves-light blue-grey darken-4 btn-small"
+              ><i class="material-icons left">login</i>Sign in</a
+            >
+          </li>
+          <li>
+            <a class="waves-effect waves-light blue-grey darken-4 btn-small"
+              ><i class="material-icons left">how_to_reg</i>Sign up</a
+            >
+          </li>
+        </ul>
+        <a
+          href="#"
+          data-target="nav-mobile"
+          class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+      </div>
+    </nav>
+    {% endblock nav %} {% block content %} {% endblock content%} {% block
+    footer%}
+    <footer class="page-footer black">
+      <div class="container">
+        <div class="row">
+          <div class="col s6 push-s1">
+            <img
+              src="../static/images/perfil.jpeg"
+              style="min-width: 25vh; width: 40%"
+              alt="Me"
+              class="img-footer circle responsive-img"
+            />
+          </div>
+          <div class="col s6 m6 text-blog-purpose">
+            <h5 class="white-text center">What is the purpose of the blog?</h5>
+            <p class="grey-text text-lighten-4">
+              Blog created by me in order to learn Flask and the BackEnd world.
+              The project is available on my Github, which you can access by
+              clicking on this
+              <a
+                class="blue-grey-text text-lighten-1"
+                href="https://github.com/victorcto"
+                target="_blank"
+                >link</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright center">
+        <div class="container">
+          Copyright 2021 © Victor Couto. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    {% endblock footer %}
 
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../static/js/materialize.min.js"></script>
+    <script src="../static/js/init.js"></script>
+  </body>
 </html>
