@@ -10,3 +10,4 @@ build/
 *.egg-info/
 poetry.toml
 .vscode/
+*.secrets.*
