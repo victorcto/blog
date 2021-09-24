@@ -16,7 +16,7 @@
       media="screen,projection"
     />
     {% block extras %} {% endblock extras %}
-    <title>{{ title }}</title>
+    <title>C O D E</title>
     {% endblock head %}
   </head>
 
@@ -24,7 +24,7 @@
     {% block nav %}
     <nav class="black" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="/" class="brand-logo center">{{ title }}</a>
+        <a id="logo-container" href="/" class="brand-logo center">C O D E</a>
         <ul class="left hide-on-med-and-down">
           <li><a class="over" href="{{ url_for("web.about") }}">About</a></li>
           <li><a class="over" href="{{ url_for("web.explore") }}">Explore</a></li>
@@ -32,7 +32,7 @@
         </ul>
         <ul class="right hide-on-med-and-down">
           <li class="login-btn">
-            <a class="waves-effect waves-light blue-grey darken-4 btn-small"
+            <a href="{{ url_for("web.signin") }}" class="waves-effect waves-light blue-grey darken-4 btn-small"
               ><i class="material-icons left">login</i>Sign in</a
             >
           </li>
@@ -72,8 +72,11 @@
         >
       </div>
     </nav>
-    {% endblock nav %} {% block content %} {% endblock content%} {% block
-    footer%}
+    {% endblock nav %}
+
+    {% block content %} {% endblock content%} 
+    
+    {% block footer %}
     <footer class="page-footer black">
       <div class="container">
         <div class="row">

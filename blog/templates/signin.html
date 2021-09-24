@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block extras %}
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="../static/css/style.css"
+  media="screen,projection"
+/>
+{% endblock extras %} {% block content %}
+<div class="container">
+  <hr />
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+  <h3 class="center">Sign In</h3>
+  <div class="row">
+    <form action="{{ url_for("web.signin") }}" method="POST" class="push-s3 col
+    s6"> {{ form.hidden_tag() }}
+    <p>
+      <label>
+        <span>{{ form.username.label }}</span>
+        {{ form.username(size=32) }}
+      </label>
+      {% for error in form.username.errors %}
+      <span style="color: red">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+    <p>
+      <label>
+        <span>{{ form.password.label }}</span>
+        {{ form.password(size=32) }}
+      </label>
+      {% for error in form.password.errors %}
+      <span style="color: red">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+    <p>
+      <label>
+        {{ form.remember_me() }}
+        <span>{{ form.remember_me.label }}</span>
+      </label>
+    </p>
+    <p class="center">{{ form.submit()}}</p>
+  </div>
+</div>
+
+{% endblock %}
